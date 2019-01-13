@@ -8,60 +8,141 @@ body {
 	min-width: 100%;
 	padding: 0; margin: 0;
 	font-family: arial;
+	overflow-y: hidden;
 }
 
 main {
 	width: 100%;
 	height: 100vh;
-	
+
 	display: flex;
 	flex-direction: row-reverse;
+	background-color: #988484;
 }
 
 .window {
 	width: 45%;
-	height: 100vh;
-	overflow-y: scroll;
-	
+	height: 90vh;
+
 	display: flex;
 	justify-content: center;
+	align-items: center;
+	padding-bottom: 10vh;
+	overflow: scroll;
 }
 
 #menubar {
 	width: 10%;
 	height: 100vh;
-	background-color: grey;
+	background-color: 0;
+
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: column;
 }
 
+.button-container {
+	width: 120px;
+	height: 120px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
 .control {
-	height: 50%;
+	height: 80px;
+	width: 80px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	cursor: pointer;
+	border-radius: 100%;
+	border: 3px none white;
+	background-color: lightblue;
+	color: white;
+	transition: 0.2s all;
 }
 
 .control:hover {
-	background-color: lightblue;
+	border: 3px solid white;
+}
+
+.hover {
+	position: absolute;
+	border-radius: 100%;
+	width: 90px;
+	height: 90px;
+
+	display: block;
+	justify-content: center;
+	align-items: center;
+	border: 2px none white;
+	transition: 0.2s all;
+}
+
+.hover:hover {
+	border: 2px solid white;
 }
 
 .wrapper {
 	width: 80%;
-	height: 95%;
-	overflow: visible;
+	height: 80%;
 }
 
 .entry {
-	width: 100%;
-	height: 100px;
-	
+	width: 300px;
+	height: 80px;
+	margin: 0 auto;
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	background-color: grey;
-	box-shadow: 5px 10px 8px #888888;
-	margin-bottom: 10px;
-	border-radius: 10px;
+	cursor: pointer;
+	border: 3px none white;
+	transition: 0.3s all;
+
+	position: relative;
+}
+
+.entry p {
+	z-index: 1;
+	color: white;
+}
+
+.entry-wrapper {
+	margin: 0 auto;
+
+	width: 320px;
+	height: 100px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.entry-hover {
+	width: 310px;
+	height: 90px;
+	margin: 0 auto;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 2px none white;
+	margin-bottom: 20px;
+	transition: 0.3s all;
+}
+
+.entry-hover:hover {
+	border: 2px solid white;
+}
+
+.entry:hover {
+	border: 3px solid white;
 }
 
 .selected {
@@ -69,3 +150,10 @@ main {
 	color: white;
 }
 
+.click-hover {
+	width: 0;
+	height: 100%;
+	background-color: lightblue;
+
+	position: absolute;
+}

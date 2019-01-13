@@ -6,6 +6,7 @@
 		<link rel="stylesheet" href="style/style.css">
 		<script type="text/javascript" src="script/switchSides.js"></script>
 		<script type="text/javascript" src="script/createEntries.js"></script>
+		<script type="text/javascript" src="script/hover.js"></script>
 	</head>
 
 	<body>
@@ -16,14 +17,25 @@
 				</div>
 			</div>
 			<div id="menubar">
-				<div id="left" class="control"><h1>&larr;</h1></div>
-				<div id="right" class="control"><h1>&rarr;</h1></div>
+				<div class="button-container"><div id="left" class="control"><h1>&larr;</h1><div class="hover"></div></div></div>
+				<div class="button-container"><div id="right" class="control"><h1>&rarr;</h1><div class="hover"></div></div></div>
 			</div>
 			<div class="window" id="left-window">
 				<div class="wrapper" id="left-wrapper">
-					
+
 				</div>
 			</div>
 		</main>
 	</body>
 </html>
+
+<!--
+	<div class="entry-wrapper">
+		<div class="entry-hover">
+			<div class="entry" id="test">
+				<p>hello</p>
+				<div class="click-hover"></div>
+			</div>
+		</div>
+	</div>
+-->

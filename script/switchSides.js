@@ -2,14 +2,14 @@ window.onload = () => {
 	document.getElementById("left").addEventListener("click", () => {
 		let rightWindow = document.getElementById("right-wrapper");
 		let leftWindow = document.getElementById("left-wrapper");
-		
+
 		moveElements(rightWindow, leftWindow)
 	});
-	
+
 	document.getElementById("right").addEventListener("click", () => {
 		let rightWindow = document.getElementById("right-wrapper");
 		let leftWindow = document.getElementById("left-wrapper");
-		
+
 		moveElements(leftWindow, rightWindow)
 	});
 }
@@ -19,19 +19,18 @@ function moveElements(sourceWindow, destinationWindow) {
 	let currentElement = 0;
 	while(currentElement < sourceElements.length) {
 		let c = sourceElements[currentElement];
-		if (c.classList.contains("selected")) {
+		let x = c.children[0];
+		let y = x.children[0];
+		if (y.classList.contains("selected")) {
 			destinationWindow.appendChild(c);
-			c.classList.toggle("selected");
+			y.classList.toggle("selected");
 		} else {
 			currentElement++;
 		}
 	}
 }
 
-function clickManagerLeft() {
+function clickManager() {
 	this.classList.toggle("selected");
-}
-
-function clickManagerRight() {
-	this.classList.toggle("selected");
+	this.children[1].style.width = "100%";
 }

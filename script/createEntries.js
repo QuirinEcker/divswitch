@@ -1,6 +1,3 @@
-let elementsLeft = new Array();
-let elementsRight = new Array();
-
 window.addEventListener("load", () => {
 	let rightWindow = document.getElementById("right-wrapper");
 	let leftWindow = document.getElementById("left-wrapper");
@@ -16,7 +13,7 @@ window.addEventListener("load", () => {
 		"Marty Allyn",
 		"Calista Lindsey"
 	];
-	
+
 	let namesRight = [
 		"Rosanna Laurence",
 		"Emely Cleve",
@@ -29,20 +26,36 @@ window.addEventListener("load", () => {
 		"Lambert Philomena",
 		"Liliana Siena"
 	];
-	
+
 	for(let i = 0; i < namesLeft.length; i++) {
-		elementsLeft[i] = document.createElement("div");
-		elementsLeft[i].classList.add("entry");
-		elementsLeft[i].textContent = namesLeft[i];
-		elementsLeft[i].onclick = clickManagerLeft;
-		leftWindow.appendChild(elementsLeft[i]);
+		let element = document.createElement("div");
+		let hoverWrapper = document.createElement("div")
+		let entryWrapper = document.createElement("div")
+
+		hoverWrapper.classList.add("entry-hover");
+		entryWrapper.classList.add("entry-wrapper");
+
+		entryWrapper.appendChild(hoverWrapper);
+		hoverWrapper.appendChild(element);
+		element.classList.add("entry");
+		element.textContent = namesRight[i];
+		element.addEventListener("click", clickManager);
+		leftWindow.appendChild(entryWrapper);
 	}
-	
+
 	for(let i = 0; i < namesRight.length; i++) {
-		elementsRight[i] = document.createElement("div");
-		elementsRight[i].classList.add("entry");
-		elementsRight[i].textContent = namesRight[i];
-		elementsRight[i].onclick = clickManagerRight;
-		rightWindow.appendChild(elementsRight[i]);
+		let element = document.createElement("div");
+		let hoverWrapper = document.createElement("div")
+		let entryWrapper = document.createElement("div")
+
+		hoverWrapper.classList.add("entry-hover");
+		entryWrapper.classList.add("entry-wrapper");
+
+		entryWrapper.appendChild(hoverWrapper);
+		hoverWrapper.appendChild(element);
+		element.classList.add("entry");
+		element.textContent = namesLeft[i];
+		element.addEventListener("click", clickManager);
+		rightWindow.appendChild(entryWrapper);
 	}
 });
