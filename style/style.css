@@ -17,7 +17,9 @@ main {
 
 	display: flex;
 	flex-direction: row-reverse;
-	background-color: #988484;
+	/*background-color: #988484;*/
+	background-image: url("../img/Background.png");
+	background-size: cover;
 }
 
 .window {
@@ -28,7 +30,7 @@ main {
 	justify-content: center;
 	align-items: center;
 	padding-bottom: 10vh;
-	overflow: scroll;
+	overflow-y: hidden;
 }
 
 #menubar {
@@ -60,14 +62,13 @@ main {
 	align-items: center;
 	cursor: pointer;
 	border-radius: 100%;
-	border: 3px none white;
-	background-color: lightblue;
+	border: 3px solid white;
 	color: white;
 	transition: 0.2s all;
 }
 
 .control:hover {
-	border: 3px solid white;
+	/*border: 3px solid white;*/
 }
 
 .hover {
@@ -90,6 +91,10 @@ main {
 .wrapper {
 	width: 80%;
 	height: 80%;
+	
+	overflow-y: scroll;
+	padding-top: 20px;
+	margin-top: 60px;
 }
 
 .entry {
@@ -100,10 +105,11 @@ main {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: grey;
+	/*background-color: grey;*/
 	cursor: pointer;
-	border: 3px none white;
+	border: 3px solid white;
 	transition: 0.3s all;
+	color: white;
 
 	position: relative;
 }
@@ -142,12 +148,12 @@ main {
 }
 
 .entry:hover {
-	border: 3px solid white;
+	/*border: 3px solid white;*/
 }
 
 .selected {
-	background-color: black;
-	color: white;
+	background-color: white;
+	color: black;
 }
 
 .click-hover {
